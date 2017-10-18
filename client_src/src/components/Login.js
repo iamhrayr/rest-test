@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-import {getUser, login} from '../actions/user';
-import {isAuthenticated} from '../firebase';
 
 class Login extends Component {
     constructor(props){
@@ -16,7 +14,7 @@ class Login extends Component {
     }
 
     componentWillMount() {
-      this.props.getUser();
+      // this.props.getUser();
     }
 
     onInputChange(e){
@@ -28,21 +26,13 @@ class Login extends Component {
     onFormSubmit(e){
       e.preventDefault();
       const {email, password} = this.state;
-      this.props.login(email, password)
-        .then(user => {
-          this.props.history.push('/profile')
-        })
-        .catch(err => {
-          this.setState({
-            error: err.message
-          })
-        });
+
     }
 
     render() {
         return (
           <div>
-            {isAuthenticated() && <Redirect to="/profile" />}
+            {/*{isAuthenticated() && <Redirect to="/profile" />}*/}
             <div className="grid">
               <form className="form login" onSubmit={this.onFormSubmit}>
                 <div className="field">
@@ -67,4 +57,4 @@ class Login extends Component {
     }
 }
 
-export default connect(null,{getUser, login})(Login);
+export default connect(null,null)(Login);

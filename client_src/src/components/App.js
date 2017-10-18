@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import {isAuthenticated} from '../firebase';
 import Profile from './Profile';
 import Login from './Login';
 import Signup from './Signup';
@@ -12,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PrivateRoute path="/profile" component={Profile} />
+        {/*<PrivateRoute path="/profile" component={Profile} />*/}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
       </div>
@@ -20,6 +19,9 @@ class App extends Component {
   }
 }
 
+function isAuthenticated(){
+  return false;
+}
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
@@ -30,6 +32,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
           state: { from: props.location }
         }}/>
   )}/>
-)
+);
 
 export default App;

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {signup} from '../actions/user';
 import {Link, Redirect} from 'react-router-dom';
-import {isAuthenticated} from '../firebase';
 
 class Signup extends Component {
     constructor(props){
@@ -27,23 +26,14 @@ class Signup extends Component {
       if (password !== confirmPassword) {
         this.setState({error: 'Passwords do not match!'});
         return;
-      };
+      }
 
-      this.props.signup(email, password)
-        .then((user)=>{
-          this.props.history.push('/profile');
-        })
-        .catch((err) => {
-          this.setState({
-            error: err.message
-          })
-        })
     }
 
     render() {
         return (
           <div>
-            {isAuthenticated() && <Redirect to="/profile" />}
+            {/*{isAuthenticated() && <Redirect to="/profile" />}*/}
             <div className="grid">
               <form className="form login" onSubmit={this.onFormSubmit}>
                 <div className="field">
