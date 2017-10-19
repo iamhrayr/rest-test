@@ -1,0 +1,32 @@
+{
+  "name": "comments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "postId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "post": {
+      "type": "belongsTo",
+      "model": "posts",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
