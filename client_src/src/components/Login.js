@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import {login} from '../actions/user';
 
 class Login extends Component {
     constructor(props){
@@ -27,6 +28,7 @@ class Login extends Component {
       e.preventDefault();
       const {email, password} = this.state;
 
+      this.props.login(email, password);
     }
 
     render() {
@@ -57,4 +59,4 @@ class Login extends Component {
     }
 }
 
-export default connect(null,null)(Login);
+export default connect(null,{login})(Login);

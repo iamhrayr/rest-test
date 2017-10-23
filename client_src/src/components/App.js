@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/*<PrivateRoute path="/profile" component={Profile} />*/}
+        <PrivateRoute path="/profile" component={Profile} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
       </div>
@@ -20,7 +20,7 @@ class App extends Component {
 }
 
 function isAuthenticated(){
-  return false;
+  return true;
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => (

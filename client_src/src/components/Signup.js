@@ -28,6 +28,10 @@ class Signup extends Component {
         return;
       }
 
+      this.props.signup(email, password)
+        .catch(err => {
+          this.setState({error: err})
+        });
     }
 
     render() {
