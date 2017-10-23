@@ -41,17 +41,17 @@ class Profile extends Component {
 
   renderPosts(){
     return (
-      <ul>
+      <ol>
         {Object.keys(this.props.posts).map(key => {
           return (
-            <li style={{marginBottom:30}}>
+            <li style={{marginBottom:30}} key={key}>
               <h3>{this.props.posts[key].title}</h3>
               <div>{this.props.posts[key].body}</div>
               <small>{this.props.posts[key].userId}</small>
             </li>
           )
         })}
-      </ul>
+      </ol>
     )
   }
 

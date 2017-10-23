@@ -22,7 +22,8 @@ export function getPosts(){
 export function addPost(postDetails){
   return dispatch => {
     axios.post('http://localhost:3000/api/posts', {
-      ...postDetails
+      ...postDetails,
+      userId: 'test'
     }, {
       headers: {
         'Authorization': `${localStorage.getItem('token')}`
