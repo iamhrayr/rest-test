@@ -6,6 +6,11 @@ import reducer from './reducers';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
+import axios from 'axios';
+
+if (localStorage.getItem('token')) {
+  axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+}
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
