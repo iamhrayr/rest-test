@@ -21,11 +21,11 @@ class Profile extends Component {
   }
 
   logout(){
-    // this.props.signout()
-    //   .then(()=>{
-    //     console.log('logout success')
-    //     this.props.history.push('/login');
-    //   })
+    this.props.signout()
+      .then(() => {
+        console.log('logout success')
+        this.props.history.push('/login');
+      })
   }
 
   onInputChange(e){

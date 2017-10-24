@@ -21,7 +21,7 @@ export function getPosts(){
 
 export function addPost(postDetails){
   return dispatch => {
-    axios.post('http://localhost:3000/api/posts', {
+    return axios.post('http://localhost:3000/api/posts', {
       ...postDetails,
       userId: 'test'
     }, {
