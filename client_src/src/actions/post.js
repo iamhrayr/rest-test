@@ -25,9 +25,9 @@ export function addPost(postDetails){
       ...postDetails,
       userId: 'test'
     }, {
-      headers: {
-        'Authorization': `${localStorage.getItem('token')}`
-      }
+      // headers: {
+      //   'Authorization': `${localStorage.getItem('token')}`
+      // }
     })
   }
 }
