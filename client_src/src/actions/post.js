@@ -21,11 +21,7 @@ export function getPosts(){
 
 export function addPost(postDetails){
   return dispatch => {
-<<<<<<< HEAD
-    axios.post('http://localhost:3000/api/posts', {
-=======
     return axios.post('http://localhost:3000/api/posts', {
->>>>>>> 664d70af0f8d663483d998527052c7a4fbfb6c52
       ...postDetails,
       userId: 'test'
     }, {
